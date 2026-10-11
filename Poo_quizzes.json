@@ -1,0 +1,842 @@
+[
+    {
+        "question": "A program contains the same student-record logic copied into several functions. Which OOP design change best reduces this duplication while keeping each student's data and behavior together?",
+        "options": [
+            "Create a Student class that groups student state and related operations",
+            "Place student data in global variables and let every function modify it",
+            "Move every operation into the program's main function",
+            "Create a separate application for each student"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "A class groups related state and behavior into one abstraction, reducing repeated logic and making student records easier to manage."
+    },
+    {
+        "question": "A banking application has Account objects. Each account must keep its own balance, while all accounts follow the same deposit rules. Which design fits this requirement?",
+        "options": [
+            "Store one shared balance in a static field",
+            "Keep balance and deposit behavior in an Account class, with a separate balance per object",
+            "Create a new deposit function for every account",
+            "Represent all accounts using one string"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "An instance field belongs to each object, while the class method can define the common deposit behavior."
+    },
+    {
+        "question": "A team is building a simulation with many types of vehicles. Every vehicle has a speed, but cars and bicycles calculate their movement differently. What is the most suitable starting design?",
+        "options": [
+            "Write one unrelated program for every vehicle",
+            "Use one global speed variable for all vehicles",
+            "Create a common Vehicle abstraction and specialize the movement behavior for each type",
+            "Store the movement rules as comments"
+        ],
+        "correct": "C",
+        "difficulty": 4,
+        "explanation": "A common abstraction captures shared concepts while specialized classes can implement different movement behavior."
+    },
+    {
+        "question": "A developer models `Book` with fields for title and author, then creates `book1` and `book2`. What is the relationship between these elements?",
+        "options": [
+            "The two objects are classes and Book is an instance",
+            "Book is a method and the titles are constructors",
+            "The fields are objects and the books are packages",
+            "Book is the class, and book1 and book2 are distinct objects"
+        ],
+        "correct": "D",
+        "difficulty": 2,
+        "explanation": "The class defines the structure; each object is an instance with its own state."
+    },
+    {
+        "question": "Two objects are created from the same class, then one object's field changes. Under the usual instance-field model, what should happen to the other object's field?",
+        "options": [
+            "It remains unchanged unless the program explicitly changes it",
+            "It must change to the same value automatically",
+            "Both objects become classes",
+            "The class definition is permanently rewritten"
+        ],
+        "correct": "A",
+        "difficulty": 2,
+        "explanation": "Each object has its own instance state, so changing one object's field does not automatically change another's."
+    },
+    {
+        "question": "A procedural solution represents an order using separate arrays for customer names, totals, and statuses. What OOP benefit is most relevant when redesigning this solution?",
+        "options": [
+            "OOP guarantees the program will use less memory",
+            "An Order object can keep related order data and operations together",
+            "OOP removes the need to test the program",
+            "OOP automatically converts arrays into databases"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "Encapsulation lets a model keep related data and behavior together rather than scattering them across separate structures."
+    },
+    {
+        "question": "A class is intended to represent a real-world concept, but it contains only unrelated methods and no clear responsibility. What is the strongest design concern?",
+        "options": [
+            "Every class must contain exactly four methods",
+            "A class cannot contain methods without a constructor",
+            "The class may not represent a cohesive abstraction",
+            "All methods must be static"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "A useful class should model a coherent concept or responsibility rather than collect unrelated operations."
+    },
+    {
+        "question": "A `Temperature` class stores Celsius values. Different parts of a program need to convert them to Fahrenheit consistently. Where should the conversion rule normally belong?",
+        "options": [
+            "In a different duplicated formula at every call site",
+            "Only in a comment above main",
+            "In a random utility unrelated to temperature",
+            "As behavior associated with the Temperature abstraction"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "Placing conversion behavior with the temperature concept centralizes the rule and improves maintainability."
+    },
+    {
+        "question": "A class defines a `withdraw` method, but callers can directly set its balance field to any value. Which design problem does this create?",
+        "options": [
+            "It bypasses the class's validation and weakens encapsulation",
+            "It makes inheritance impossible",
+            "It turns every object into a static object",
+            "It prevents the class from being instantiated"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "Direct public access can bypass withdrawal rules, so the class cannot reliably protect its own state."
+    },
+    {
+        "question": "An object should reject a withdrawal that exceeds its balance. Which approach best protects this rule?",
+        "options": [
+            "Let callers edit the balance field directly",
+            "Keep balance controlled by the class and validate inside withdrawal behavior",
+            "Use a public field and document the rule only",
+            "Make balance a package name"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "The class should control access to balance and enforce the business rule in its own operation."
+    },
+    {
+        "question": "A class has a constructor that requires a product name and price. What is the main reason to pass these values during object creation?",
+        "options": [
+            "To make the fields belong to every class in the program",
+            "To prevent the object from having methods",
+            "To initialize each new object's state to a meaningful starting state",
+            "To replace the class with a package"
+        ],
+        "correct": "C",
+        "difficulty": 2,
+        "explanation": "A constructor can initialize an object's fields when the object is created."
+    },
+    {
+        "question": "A developer writes a constructor with the same name as the class but gives it a return type of `void`. In Java, what is the issue?",
+        "options": [
+            "All constructors must be private",
+            "A constructor must return the object explicitly",
+            "Constructors cannot receive parameters",
+            "With a return type, it is a method rather than a constructor"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "A Java constructor has the class name and no return type, not even void."
+    },
+    {
+        "question": "A class declares only a constructor that takes an integer. A programmer then tries to create an object with no arguments. What is the likely result?",
+        "options": [
+            "The code fails unless a matching no-argument constructor is provided",
+            "Java always supplies a no-argument constructor in this case",
+            "The integer constructor runs with zero automatically",
+            "The object is created with no class type"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "Java supplies a default no-argument constructor only when no constructor is declared by the class."
+    },
+    {
+        "question": "A class has two constructors: one accepts a name, and another accepts a name plus an age. What OOP/language feature is being used?",
+        "options": [
+            "Method overriding",
+            "Constructor overloading",
+            "Multiple inheritance",
+            "Interface implementation"
+        ],
+        "correct": "B",
+        "difficulty": 2,
+        "explanation": "Constructors can be overloaded by declaring multiple parameter lists."
+    },
+    {
+        "question": "A constructor receives a parameter named `price`, and the object has a field also named `price`. What does `this.price = price` communicate?",
+        "options": [
+            "Assign the parameter from the package name",
+            "Create a static copy of the field",
+            "Assign the current object's field from the parameter",
+            "Call a superclass constructor with no arguments"
+        ],
+        "correct": "C",
+        "difficulty": 2,
+        "explanation": "The `this` reference distinguishes the current object's field from the parameter with the same name."
+    },
+    {
+        "question": "A method changes a field using `this.count`. Which object does `this` refer to in an ordinary instance method?",
+        "options": [
+            "The parent package",
+            "The class file on disk",
+            "The most recently created object in the whole program",
+            "The current object on which the method is executing"
+        ],
+        "correct": "D",
+        "difficulty": 2,
+        "explanation": "`this` refers to the current instance executing the instance method."
+    },
+    {
+        "question": "A class's method only calculates a value from its parameters and does not use any instance fields or instance methods. Which declaration may be appropriate if the operation belongs to the class itself?",
+        "options": [
+            "static",
+            "abstract",
+            "final class only",
+            "private constructor only"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "A static method can be called through the class and does not require a particular instance's state."
+    },
+    {
+        "question": "A static method tries to access an instance field directly without an object reference. Why is this invalid in Java?",
+        "options": [
+            "Instance fields exist only in interfaces",
+            "There is no current instance implied by a static method",
+            "Static methods cannot contain expressions",
+            "Every instance field is automatically private"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "A static context has no implicit `this`, so it needs an object reference to access instance state."
+    },
+    {
+        "question": "A counter must be shared by every object of a class rather than stored separately in each object. Which kind of field is designed for this?",
+        "options": [
+            "A local variable",
+            "A constructor parameter",
+            "A static field",
+            "An instance field"
+        ],
+        "correct": "C",
+        "difficulty": 2,
+        "explanation": "A static field belongs to the class and is shared by its instances."
+    },
+    {
+        "question": "A field stores a value that should be assigned once and then not reassigned. Which Java modifier is relevant to expressing this intent?",
+        "options": [
+            "extends",
+            "implements",
+            "package",
+            "final"
+        ],
+        "correct": "D",
+        "difficulty": 2,
+        "explanation": "`final` prevents a variable from being reassigned after initialization, subject to Java's initialization rules."
+    },
+    {
+        "question": "A developer makes every field `static` to avoid creating objects. What is the most important consequence for data that should differ between objects?",
+        "options": [
+            "The data is shared instead of being independently stored per instance",
+            "The class becomes abstract automatically",
+            "All fields become inaccessible",
+            "Objects can no longer call methods"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "Static fields are shared class-level state, so they are unsuitable for values that should vary per object."
+    },
+    {
+        "question": "A method accepts an object reference and changes a field of that object. Which statement best describes Java's argument passing?",
+        "options": [
+            "Java passes objects by reference in the same way as C++ references",
+            "Java passes the reference value by value; the referenced object's state can still change",
+            "Java copies the entire object for every method call",
+            "Java forbids methods from changing object fields"
+        ],
+        "correct": "B",
+        "difficulty": 4,
+        "explanation": "The reference value is copied into the parameter, but both references can refer to the same object."
+    },
+    {
+        "question": "A method receives an integer argument and assigns a new number to its parameter. After the method returns, why is the caller's integer variable unchanged?",
+        "options": [
+            "Primitive parameters are global variables",
+            "The method's local variable replaces the caller's variable automatically",
+            "Java passes the primitive value by value",
+            "Integers cannot be method arguments"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "The parameter is a local copy of the primitive value, so reassigning it does not change the caller's variable."
+    },
+    {
+        "question": "A class exposes a public getter but no setter for an identifier that should not change after creation. What does this interface allow?",
+        "options": [
+            "Unrestricted modification through the getter",
+            "Automatic inheritance from every class",
+            "Direct access to every private field",
+            "Read access without providing a normal setter for reassignment"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "A getter exposes a value for reading, while the absence of a setter avoids offering ordinary external reassignment."
+    },
+    {
+        "question": "A setter accepts negative values for a field that represents the number of seats in a bus. What improvement best protects the object's validity?",
+        "options": [
+            "Validate the new value before assigning it",
+            "Rename the field with capital letters only",
+            "Make the setter static without changing its logic",
+            "Move the validation into a comment"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "A setter can reject invalid input before changing the object's state."
+    },
+    {
+        "question": "Why might a class keep its fields private and provide selected public methods instead?",
+        "options": [
+            "Private fields are automatically saved to a database",
+            "The class can control how its internal state is accessed and changed",
+            "Public methods cannot call private fields",
+            "It forces all subclasses to be interfaces"
+        ],
+        "correct": "B",
+        "difficulty": 2,
+        "explanation": "Encapsulation protects internal representation and exposes controlled operations to callers."
+    },
+    {
+        "question": "A class's implementation changes from storing a date as three integers to using a date object. Which design choice makes this change less disruptive to callers?",
+        "options": [
+            "Make every internal field public",
+            "Require every caller to inspect the implementation",
+            "Keep a stable public interface while changing the private representation",
+            "Rename all methods whenever a field changes"
+        ],
+        "correct": "C",
+        "difficulty": 4,
+        "explanation": "A stable public interface hides representation details, allowing internal implementation changes with fewer effects on clients."
+    },
+    {
+        "question": "A class is intended to be used only inside its package. Which Java access level most directly allows package-level access without making members public?",
+        "options": [
+            "public",
+            "protected only",
+            "private",
+            "package-private access"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "Without an access modifier, a class member has package-private access and is available within the same package."
+    },
+    {
+        "question": "A subclass in another package needs to access a protected member through inheritance. Which statement is the best general description?",
+        "options": [
+            "Protected access is available in the subclass context, subject to Java's access rules",
+            "Protected means accessible from every unrelated class everywhere",
+            "Protected means accessible only in the declaring class",
+            "Protected makes the member static"
+        ],
+        "correct": "A",
+        "difficulty": 4,
+        "explanation": "Protected members are accessible in the same package and under inheritance-related rules in subclasses outside the package."
+    },
+    {
+        "question": "A developer marks a helper method private. A subclass then attempts to override that method. What is the key reason this does not work as an ordinary override?",
+        "options": [
+            "Private methods are always abstract",
+            "The private superclass method is not inherited as an overridable method by the subclass",
+            "Private methods cannot have parameters",
+            "A subclass cannot contain methods with the same name"
+        ],
+        "correct": "B",
+        "difficulty": 4,
+        "explanation": "Private members are not inherited for overriding; a same-named subclass method is not an override of that private method."
+    },
+    {
+        "question": "A class is placed in a named package, but another source file cannot resolve it. Which basic check is most relevant?",
+        "options": [
+            "Whether every method is static",
+            "Whether all variables use uppercase names",
+            "Whether the package declaration, directory structure, import, and classpath agree",
+            "Whether the class has exactly one constructor"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "Java package organization, imports, and classpath must be consistent for types to be resolved."
+    },
+    {
+        "question": "Two classes have the same simple name but belong to different packages. What does package qualification help the compiler distinguish?",
+        "options": [
+            "The classes' object sizes",
+            "Their constructors' runtime values",
+            "Their inheritance depth only",
+            "Which fully qualified type is being referenced"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "A fully qualified name includes the package and identifies the intended type."
+    },
+    {
+        "question": "A method should accept keyboard input from the user in a simple Java console program. Which course-related tool is suitable for reading input?",
+        "options": [
+            "Scanner",
+            "Thread",
+            "extends",
+            "final"
+        ],
+        "correct": "A",
+        "difficulty": 1,
+        "explanation": "The Scanner class can read input from sources such as System.in in console programs."
+    },
+    {
+        "question": "A program reads an integer using Scanner and then reads a full line of text. The line appears empty because the previous numeric read left a newline. What is the usual fix?",
+        "options": [
+            "Declare every Scanner as static",
+            "Consume the remaining newline before reading the next full line",
+            "Use inheritance to convert the integer to a string",
+            "Replace the input with a constructor"
+        ],
+        "correct": "B",
+        "difficulty": 4,
+        "explanation": "A numeric Scanner read leaves the line separator behind; consuming it avoids the next line read returning immediately."
+    },
+    {
+        "question": "A Java program uses `null` for a reference field before an object is assigned. What does that value indicate?",
+        "options": [
+            "An object whose fields are all zero",
+            "A class with no methods",
+            "A reference that currently points to no object",
+            "A package with no source files"
+        ],
+        "correct": "C",
+        "difficulty": 2,
+        "explanation": "`null` represents the absence of an object reference."
+    },
+    {
+        "question": "A program invokes an instance method on a reference that is null. What kind of problem should the programmer anticipate?",
+        "options": [
+            "Automatic object construction",
+            "A compile-time creation of a new class",
+            "The method is treated as static",
+            "A NullPointerException at runtime"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "Calling an instance method through a null reference causes a NullPointerException."
+    },
+    {
+        "question": "A class has a method named `print` with one String parameter and another `print` with an int parameter. What allows both methods to coexist?",
+        "options": [
+            "Method overloading using different parameter lists",
+            "Method overriding without inheritance",
+            "A constructor with a return type",
+            "A static import of the class"
+        ],
+        "correct": "A",
+        "difficulty": 2,
+        "explanation": "Overloaded methods share a name but differ in their parameter lists."
+    },
+    {
+        "question": "A subclass defines a method with the same signature as an inherited instance method, intending to provide specialized behavior. Which feature is this?",
+        "options": [
+            "Constructor chaining",
+            "Method overriding",
+            "Field hiding only",
+            "Package importing"
+        ],
+        "correct": "B",
+        "difficulty": 2,
+        "explanation": "Overriding lets a subclass replace inherited instance-method behavior for that subclass."
+    },
+    {
+        "question": "A developer changes only the return type of a method but leaves its name and parameter list unchanged, expecting a valid overload. Why is that not a valid overload in Java?",
+        "options": [
+            "Return types must always be void",
+            "Every overload must be static",
+            "Overloading is distinguished by parameter lists, not return type alone",
+            "Methods cannot share names"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "Changing only the return type does not create a distinct method signature for overloading."
+    },
+    {
+        "question": "A `Shape` reference refers to a `Circle` object, and `draw()` is overridden in Circle. Which implementation normally runs when `shape.draw()` is called?",
+        "options": [
+            "The Shape implementation in every case",
+            "The implementation from whichever class was imported last",
+            "No method, because the reference type differs",
+            "The Circle implementation, based on the actual object's runtime type"
+        ],
+        "correct": "D",
+        "difficulty": 4,
+        "explanation": "Dynamic dispatch selects the overridden instance method according to the actual object's class."
+    },
+    {
+        "question": "A method accepts a `Shape` parameter and calls `draw()`. It works with Circle and Rectangle objects without checking each type. Which OOP principle is being used?",
+        "options": [
+            "Polymorphism",
+            "Encapsulation only",
+            "Constructor overloading",
+            "Package-private access"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "Polymorphism allows one common type to refer to different subtype objects that provide their own behavior."
+    },
+    {
+        "question": "A program contains `Animal a = new Dog();`. Which statement correctly distinguishes the two types in this declaration?",
+        "options": [
+            "The declared type is Dog, while the object is Animal",
+            "The variable's declared type is Animal, while the object created is a Dog",
+            "Both types must be interfaces",
+            "The statement creates two objects"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "The reference is declared as Animal but refers to an instance of Dog."
+    },
+    {
+        "question": "A subclass inherits a method but does not override it. A call to that method is made on the subclass object. What happens?",
+        "options": [
+            "The call is always a compile error",
+            "The superclass becomes an object",
+            "The inherited implementation can be used",
+            "The method runs only if marked static"
+        ],
+        "correct": "C",
+        "difficulty": 2,
+        "explanation": "A subclass can use accessible inherited behavior when it does not provide an override."
+    },
+    {
+        "question": "A subclass overrides a method but accidentally narrows its visibility from public to private. Why is this a problem?",
+        "options": [
+            "Java requires every override to be static",
+            "The subclass must rename itself",
+            "Private methods must return boolean",
+            "An overriding method cannot reduce the access level of the inherited method"
+        ],
+        "correct": "D",
+        "difficulty": 4,
+        "explanation": "An override must not be less accessible than the method it overrides."
+    },
+    {
+        "question": "A subclass's constructor must initialize the superclass portion of an object. What is the role of `super(...)` in this situation?",
+        "options": [
+            "It invokes a superclass constructor with the specified arguments",
+            "It creates an unrelated second object",
+            "It calls a static method in the package",
+            "It prevents the subclass from having fields"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "`super(...)` calls a superclass constructor and must appear first in a constructor when used explicitly."
+    },
+    {
+        "question": "A superclass has no no-argument constructor, but a subclass constructor does not call any superclass constructor explicitly. What issue can arise?",
+        "options": [
+            "The superclass constructor is skipped safely",
+            "Compilation fails if no accessible no-argument superclass constructor exists",
+            "Java invents a constructor matching every subclass parameter",
+            "The subclass automatically becomes abstract"
+        ],
+        "correct": "B",
+        "difficulty": 4,
+        "explanation": "Java's implicit super() call requires an accessible no-argument superclass constructor."
+    },
+    {
+        "question": "A `Car` class extends `Vehicle`. Which design interpretation best matches the IS-A relationship?",
+        "options": [
+            "Every Vehicle must be a Car",
+            "Car and Vehicle are unrelated because their names differ",
+            "A Car is a kind of Vehicle and can be used where a Vehicle is expected",
+            "Car contains a Vehicle only as a text field"
+        ],
+        "correct": "C",
+        "difficulty": 2,
+        "explanation": "Inheritance models a subtype relationship: a Car is a Vehicle."
+    },
+    {
+        "question": "A class `Square` extends `Rectangle`, but the application allows a rectangle's width and height to change independently. Which concern should the designer examine?",
+        "options": [
+            "Whether Square should be a package",
+            "Whether every field can be static",
+            "Whether constructors can be overloaded",
+            "Whether the inheritance model preserves the expected behavior of a square"
+        ],
+        "correct": "D",
+        "difficulty": 4,
+        "explanation": "If inherited operations allow unequal dimensions, the subtype may violate the expected properties of a square."
+    },
+    {
+        "question": "A subclass only adds a new field and uses all superclass behavior unchanged. Which statement is most accurate?",
+        "options": [
+            "It can inherit behavior and add its own state or behavior",
+            "It must override every inherited method",
+            "It cannot have a constructor",
+            "It is automatically an interface"
+        ],
+        "correct": "A",
+        "difficulty": 2,
+        "explanation": "A subclass can extend a superclass without overriding every method."
+    },
+    {
+        "question": "A class should define a common method contract but should not be instantiated directly because it is incomplete. Which Java construct best fits?",
+        "options": [
+            "A final concrete class",
+            "An abstract class",
+            "A package declaration",
+            "A static method"
+        ],
+        "correct": "B",
+        "difficulty": 2,
+        "explanation": "An abstract class can define shared state or behavior while preventing direct instantiation."
+    },
+    {
+        "question": "An abstract class declares an abstract method `calculate()`. What must a concrete subclass generally do?",
+        "options": [
+            "Make the method a field",
+            "Delete the superclass",
+            "Provide an implementation for the inherited abstract method unless it remains abstract",
+            "Declare every field final"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "A concrete class must implement inherited abstract methods that have not already been implemented."
+    },
+    {
+        "question": "A base class has some implemented methods and some abstract methods. Why can this be useful?",
+        "options": [
+            "It means the class contains no behavior",
+            "It prevents subclasses from adding methods",
+            "It makes every subclass static",
+            "It shares common behavior while requiring subclasses to implement selected operations"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "Abstract classes can combine reusable concrete behavior with abstract operations that subclasses must define."
+    },
+    {
+        "question": "A class is declared `final`. What inheritance restriction does this impose in Java?",
+        "options": [
+            "It cannot be extended by a subclass",
+            "Its objects cannot have fields",
+            "Its methods all become abstract",
+            "It must implement two interfaces"
+        ],
+        "correct": "A",
+        "difficulty": 2,
+        "explanation": "A final class cannot be subclassed."
+    },
+    {
+        "question": "A method is declared `final` in a superclass. What is the direct consequence for a subclass?",
+        "options": [
+            "It cannot call the method",
+            "It cannot override that method",
+            "It must call the method twice",
+            "It must change the method's return type"
+        ],
+        "correct": "B",
+        "difficulty": 2,
+        "explanation": "A final method may be inherited and used, but not overridden."
+    },
+    {
+        "question": "A class implements an interface called `Payable`. What does the interface mainly provide to the class?",
+        "options": [
+            "A ready-made object containing all possible fields",
+            "A rule that the class must extend two classes",
+            "A contract of operations the implementing class promises to provide",
+            "A replacement for every constructor"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "An interface defines a type contract that implementing classes must satisfy."
+    },
+    {
+        "question": "A class implements two interfaces that declare different method contracts. What is a key benefit of interfaces in Java's design?",
+        "options": [
+            "They force the class to inherit state from both interfaces",
+            "They prevent the class from extending any superclass",
+            "They automatically make all methods private",
+            "They allow a class to conform to multiple type contracts"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "A Java class can implement multiple interfaces even though it can extend only one class."
+    },
+    {
+        "question": "A class implements an interface but omits one of its required abstract methods. What must be true for the class to compile?",
+        "options": [
+            "The class must be declared abstract, unless the method is implemented elsewhere",
+            "The class must be final",
+            "The missing method must be a constructor",
+            "The interface must be renamed"
+        ],
+        "correct": "A",
+        "difficulty": 3,
+        "explanation": "A non-abstract implementing class must satisfy the interface's abstract method requirements."
+    },
+    {
+        "question": "A design needs different unrelated classes to be accepted by a method whenever they provide a `calculateArea()` operation. Which abstraction may best express that shared contract?",
+        "options": [
+            "A single concrete class that all classes must extend",
+            "An interface describing the area-calculation operation",
+            "A package containing only constants",
+            "A private constructor in every class"
+        ],
+        "correct": "B",
+        "difficulty": 4,
+        "explanation": "An interface can define the common capability without requiring unrelated classes to share a superclass."
+    },
+    {
+        "question": "A developer uses inheritance only to reuse a few lines of code, even though the classes do not form a genuine IS-A relationship. What is the main design risk?",
+        "options": [
+            "The classes become impossible to compile",
+            "All methods become static",
+            "The subtype relationship may misrepresent the domain and complicate reasoning",
+            "The program can no longer use constructors"
+        ],
+        "correct": "C",
+        "difficulty": 4,
+        "explanation": "Inheritance should represent a meaningful subtype relationship; using it only for code reuse can create incorrect models."
+    },
+    {
+        "question": "A `Notification` superclass defines `send()`. EmailNotification and SMSNotification override it. A collection stores both as Notification references and loops over them calling `send()`. What makes this design extensible?",
+        "options": [
+            "Every notification must use identical code",
+            "The collection automatically converts objects into strings",
+            "The superclass constructor runs instead of every override",
+            "The loop calls each object's implementation without knowing its concrete subtype"
+        ],
+        "correct": "D",
+        "difficulty": 4,
+        "explanation": "Polymorphism lets the same loop work with new notification subtypes as long as they satisfy the common abstraction."
+    },
+    {
+        "question": "A programmer checks `if (obj instanceof Dog)` before every operation and casts to Dog, even though all needed objects share a `makeSound()` method through Animal. What design improvement may reduce type-specific checks?",
+        "options": [
+            "Use an overridable makeSound() operation and polymorphic dispatch",
+            "Make every sound method a constructor",
+            "Replace inheritance with global variables",
+            "Make Animal's methods private"
+        ],
+        "correct": "A",
+        "difficulty": 4,
+        "explanation": "When behavior belongs to a common abstraction, overriding and dynamic dispatch can avoid repeated type checks."
+    },
+    {
+        "question": "A class `Employee` contains name and ID, while `Manager` adds a team size. Which allocation of responsibilities is most reasonable?",
+        "options": [
+            "Put every field in Manager and make Employee empty",
+            "Keep common employee state in Employee and manager-specific state in Manager",
+            "Put team size in a global variable shared by all managers",
+            "Put name and ID in the main method only"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "A superclass is a suitable place for common state; specialized state belongs in the relevant subclass."
+    },
+    {
+        "question": "A `Vehicle` method `move()` is overridden by `Boat` and `Airplane`. A new `Train` class is added. Which change best demonstrates the benefit of polymorphic design?",
+        "options": [
+            "Rewrite every call site to use a separate train-only branch",
+            "Remove the common Vehicle type",
+            "Add Train's implementation of the shared operation and use it through the common type",
+            "Convert all objects to static fields"
+        ],
+        "correct": "C",
+        "difficulty": 4,
+        "explanation": "New subtypes can participate through the shared abstraction with minimal changes to client code."
+    },
+    {
+        "question": "A method is overloaded with `process(int)` and `process(String)`. The compiler chooses which version to call primarily from what information?",
+        "options": [
+            "The method body that runs fastest",
+            "The object's creation date",
+            "The package directory size",
+            "The argument types and method signatures available at compile time"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "Overload resolution is based on the compile-time argument types and applicable method signatures."
+    },
+    {
+        "question": "A superclass reference points to a subclass object. The subclass overrides `show()`, but the superclass also declares a field with the same name as a subclass field. Which general distinction is important?",
+        "options": [
+            "Overridden methods dispatch at runtime; fields do not override in the same way",
+            "Fields always dispatch by runtime type exactly like methods",
+            "Both fields and methods are resolved only by object creation order",
+            "Neither methods nor fields can be inherited"
+        ],
+        "correct": "A",
+        "difficulty": 5,
+        "explanation": "Java dynamically dispatches overridden instance methods; field access is resolved differently and can depend on the reference's declared type."
+    },
+    {
+        "question": "A class needs to prevent direct object creation but still provide a reusable base for several implementations. Which design best matches that requirement?",
+        "options": [
+            "Declare every method static",
+            "Make the class abstract and expose the intended operations to subclasses",
+            "Use only private fields and no constructors",
+            "Make the class final and require subclasses"
+        ],
+        "correct": "B",
+        "difficulty": 3,
+        "explanation": "An abstract class cannot be instantiated directly but can serve as a superclass."
+    },
+    {
+        "question": "A class implements an interface and also extends a base class. Which statement is correct in Java?",
+        "options": [
+            "A class may extend multiple classes but implement only one interface",
+            "A class cannot both extend a class and implement an interface",
+            "A class can extend one class and implement multiple interfaces",
+            "An interface must always extend a concrete class"
+        ],
+        "correct": "C",
+        "difficulty": 3,
+        "explanation": "Java allows single class inheritance and multiple interface implementation."
+    },
+    {
+        "question": "A base class provides a public `getArea()` method, and a subclass needs a specialized area calculation. Which change preserves the common public API while adapting the result?",
+        "options": [
+            "Declare a second unrelated class with the same name",
+            "Change the inherited method to private",
+            "Remove the method from the base class",
+            "Override getArea() with a compatible signature in the subclass"
+        ],
+        "correct": "D",
+        "difficulty": 3,
+        "explanation": "Overriding changes the subclass behavior while retaining the common method signature."
+    },
+    {
+        "question": "A developer creates one class per individual customer instead of creating Customer objects from a shared class. What fundamental modeling issue does this illustrate?",
+        "options": [
+            "Confusing a type definition with its individual instances",
+            "Using too many interfaces",
+            "Incorrect use of the final keyword only",
+            "An unavoidable requirement of OOP"
+        ],
+        "correct": "A",
+        "difficulty": 2,
+        "explanation": "A class should describe the shared structure and behavior; individual customers should normally be represented by objects."
+    },
+    {
+        "question": "A method in a class needs to use a field that belongs to each instance. Which method type is normally appropriate?",
+        "options": [
+            "A package declaration",
+            "An instance method called on an object",
+            "A static method with no object reference",
+            "An abstract method in every case"
+        ],
+        "correct": "B",
+        "difficulty": 2,
+        "explanation": "Instance methods execute in the context of an object and can directly access its instance fields."
+    }
+]

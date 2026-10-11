@@ -1,0 +1,1262 @@
+[
+  {
+    "question": "How many inputs can an algorithm have, according to the course?",
+    "options": [
+      "Exactly one",
+      "At least one",
+      "At least two",
+      "Zero or more"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "An algorithm can have zero or more inputs, but it must produce at least one output."
+  },
+  {
+    "question": "Which quality is the ability of an algorithm to protect itself from abnormal conditions of use?",
+    "options": [
+      "Robustness",
+      "Validity",
+      "Reusability",
+      "Efficiency"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Validity = does the right task; robustness = survives abnormal use; reusability = solves equivalent tasks; efficiency = good use of the hardware."
+  },
+  {
+    "question": "Which symbol does the course's algorithmic language use for assignment?",
+    "options": [
+      "←",
+      "=",
+      "≠",
+      "%"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Assignment is written name_variable ← Expression ; while = is the comparison 'equals to'."
+  },
+  {
+    "question": "In the course's algorithmic language, what does the % operator compute?",
+    "options": [
+      "The quotient of an integer division",
+      "A percentage",
+      "The absolute value",
+      "The remainder of an integer division"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "% is the modulo operator: for example 17 % 5 = 2."
+  },
+  {
+    "question": "Which line declares an array T of 50 integers in the course's notation?",
+    "options": [
+      "T : integer array (50) ;",
+      "T : array [50] of integer ;",
+      "array T = integer [50] ;",
+      "T = array of 50 ;"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "General form: <name> : array [dimension] of <type> ;"
+  },
+  {
+    "question": "M : array [10][50] of integer ;\nHow many integers can M store?",
+    "options": [
+      "500",
+      "60",
+      "50",
+      "10"
+    ],
+    "correct": "A",
+    "difficulty": 2,
+    "explanation": "A bi-dimensional array [10][50] has 10 rows and 50 columns: 10 × 50 = 500 components."
+  },
+  {
+    "question": "Which loop always executes its body at least once?",
+    "options": [
+      "repeat ... until (condition)",
+      "while (condition) do ... endwhile",
+      "for i ← 1 to 0 do ... endfor",
+      "if (condition) then ... endif"
+    ],
+    "correct": "A",
+    "difficulty": 2,
+    "explanation": "repeat tests its condition after the body; while and for test before it, so they may not run at all."
+  },
+  {
+    "question": "What distinguishes a function from a procedure in the course?",
+    "options": [
+      "A function has no parameters",
+      "A function returns a value (return) and has a result type",
+      "A procedure cannot have local variables",
+      "A procedure can only be called from the main program"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "A function header ends with : result_type and its body ends with return(expression). A procedure returns nothing directly."
+  },
+  {
+    "question": "In case <expression> is ... else <block p> endcase, when does block p run?",
+    "options": [
+      "Always, after the matching domain",
+      "Only when the expression is 0",
+      "When no domain matches the expression",
+      "Never: else is ignored in a case"
+    ],
+    "correct": "C",
+    "difficulty": 2,
+    "explanation": "The else block is executed only if no element of any domain is equal to the expression."
+  },
+  {
+    "question": "Permute swaps A and B, but its parameters are passed by value (I) instead of I/O. After Read(A, B) with 3 and 8, then Permute(A, B), what does Write(A, B) display?",
+    "options": [
+      "8 3",
+      "3 8",
+      "8 8",
+      "3 3"
+    ],
+    "correct": "B",
+    "difficulty": 3,
+    "explanation": "By value, Permute works on copies that disappear on return, so the caller's A and B are unchanged."
+  },
+  {
+    "question": "s ← 0\nfor i ← 1 to 4 step 2 do\n  s ← s + i\nendfor\nwrite(s)\nWhat is displayed?",
+    "options": [
+      "3",
+      "6",
+      "4",
+      "10"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "i takes the values 1 and 3 (5 exceeds 4): s = 1 + 3 = 4."
+  },
+  {
+    "question": "n ← 25 ; c ← 0\nwhile (n > 0) do\n  n ← n / 10   (integer division)\n  c ← c + 1\nendwhile\nwrite(c)\nWhat is displayed?",
+    "options": [
+      "1",
+      "3",
+      "2",
+      "25"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "n goes 25 → 2 → 0, so the body runs twice: c = 2."
+  },
+  {
+    "question": "Procedure P (I/ a : integer, I/O b : integer) :  a ← a + 1 ; b ← b + a ;\nMain: x ← 1 ; y ← 1 ; P(x, y) ; P(x, y) ; write(x, y)\nWhat is displayed?",
+    "options": [
+      "3 5",
+      "1 5",
+      "1 3",
+      "3 7"
+    ],
+    "correct": "B",
+    "difficulty": 4,
+    "explanation": "x is passed by value so it stays 1. Each call: a = 2, then y ← y + 2, so y goes 1 → 3 → 5."
+  },
+  {
+    "question": "The global variable x is 1. Procedure P declares a LOCAL variable x and executes x ← 5. After the call P(), what does write(x) display in the main program?",
+    "options": [
+      "5",
+      "6",
+      "An error: x is declared twice",
+      "1"
+    ],
+    "correct": "D",
+    "difficulty": 4,
+    "explanation": "The local x hides the global one inside P and disappears on return; the global x keeps the value 1."
+  },
+  {
+    "question": "c ← 0 ; for i ← 1 to 4 do\n  for j ← i to 4 do\n    if ((i + j) % 2 = 0) then c ← c + 1\n  endfor\nendfor ; write(c)\nWhat is displayed?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correct": "C",
+    "difficulty": 5,
+    "explanation": "Pairs (i, j) with i ≤ j and i + j even: (1,1), (1,3), (2,2), (2,4), (3,3), (4,4) = 6."
+  },
+  {
+    "question": "Which structure gives a contiguous representation of data in memory?",
+    "options": [
+      "A linked list",
+      "A dynamic variable",
+      "A pointer",
+      "An array"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "Contiguous representation uses arrays: cells are adjacent in memory and accessed directly by index."
+  },
+  {
+    "question": "In a singly linked list, what does each cell contain in addition to its element?",
+    "options": [
+      "The address of the next cell",
+      "The address of the previous cell",
+      "The index of the cell in an array",
+      "The size of the list"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Each cell is a record with an info field and a next field pointing to its successor."
+  },
+  {
+    "question": "What does the assignment p ← nil mean?",
+    "options": [
+      "p points to the first cell",
+      "p contains the value 0",
+      "p's memory is freed",
+      "p points to nothing"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "nil (NULL in C) is the only predefined pointer constant: a pointer that points to nothing."
+  },
+  {
+    "question": "In the course's notation, which operator gives the content of an address?",
+    "options": [
+      "@ (address of)",
+      "% (modulo)",
+      "← (assignment)",
+      "^ (content of)"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "@ gives the address of a variable; ^ gives the content at an address, as in (^p).info."
+  },
+  {
+    "question": "Which limits of arrays are mentioned in the course?",
+    "options": [
+      "Elements cannot be accessed by index",
+      "All elements must have different types",
+      "Arrays can only store characters",
+      "The size must be known at declaration, and insertion or deletion needs shifting"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "The number of cells must be known when writing the declaration, and insertion may be impossible if the array is full."
+  },
+  {
+    "question": "How are the elements of a linked list accessed?",
+    "options": [
+      "Directly by index, like an array",
+      "Directly by their memory address only",
+      "Sequentially, starting from the head",
+      "Randomly, in constant time"
+    ],
+    "correct": "C",
+    "difficulty": 2,
+    "explanation": "There is no direct access: you follow the next pointers from the entry point (the head) until the wanted cell."
+  },
+  {
+    "question": "When is memory reserved for a static variable?",
+    "options": [
+      "When allocate is called",
+      "At compile time, for the whole execution",
+      "When the variable is first assigned",
+      "When the program calls free(p)"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "Static variables are declared in the declaration section; their size is known at compilation and they stay allocated during the whole execution."
+  },
+  {
+    "question": "What does free(p) do?",
+    "options": [
+      "Deletes the pointer variable p",
+      "Releases the memory pointed to by p (not p itself)",
+      "Sets p to 0 and keeps the memory",
+      "Allocates a new cell for p"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "free(p) frees the space pointed to by p; the pointer p still exists (it is good practice to set it to nil afterwards)."
+  },
+  {
+    "question": "A : array [10] of integer ; p ← @A ; p ← p + 5 ; p ← p - 1\nWhich element does p point to?",
+    "options": [
+      "A[5]",
+      "A[4]",
+      "A[6]",
+      "A[1]"
+    ],
+    "correct": "B",
+    "difficulty": 3,
+    "explanation": "p + 5 points to A[5], then p − 1 points to A[4]: pointer arithmetic moves by whole elements."
+  },
+  {
+    "question": "List: [A] → [B] → [C] → [D]. prd points to [B]. What is the list after delete_ele(prd)?",
+    "options": [
+      "[A] → [B] → [D]",
+      "[A] → [C] → [D]",
+      "[A] → [B] → [C]",
+      "[B] → [C] → [D]"
+    ],
+    "correct": "A",
+    "difficulty": 3,
+    "explanation": "delete_ele removes the cell AFTER prd: p takes [C], [B] is linked to [D], then [C] is freed."
+  },
+  {
+    "question": "In add_after(prd, X), which order of the two link assignments is correct?",
+    "options": [
+      "(^prd).next ← new ; then (^new).next ← (^prd).next",
+      "(^prd).next ← new ; then (^new).next ← prd",
+      "(^new).next ← (^prd).next ; then (^prd).next ← new",
+      "Either order gives the same list"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "The new cell must first take over the old successor; otherwise the rest of the list is lost once (^prd).next is overwritten."
+  },
+  {
+    "question": "CreateListHead reads the values 1, 2, 3 in this order. What is the list from head to tail?",
+    "options": [
+      "1 → 2 → 3",
+      "3 → 2 → 1",
+      "2 → 1 → 3",
+      "3 → 1 → 2"
+    ],
+    "correct": "B",
+    "difficulty": 3,
+    "explanation": "Each new node becomes the head, so the final order is reversed. Insertion at the tail preserves the order."
+  },
+  {
+    "question": "In add_head for a doubly linked list, which instruction fails if the list is empty (head = nil)?",
+    "options": [
+      "(^head).previous ← new",
+      "(^new).next ← head",
+      "(^new).previous ← nil",
+      "head ← new"
+    ],
+    "correct": "A",
+    "difficulty": 4,
+    "explanation": "It dereferences head, which is nil on an empty list: a test (if head ≠ nil) is needed before updating the old head's previous."
+  },
+  {
+    "question": "In add_after(prd, X) for a doubly linked list, why must ^((^prd).next).previous ← new run BEFORE (^prd).next ← new?",
+    "options": [
+      "Because previous pointers must always be updated first",
+      "Because new would otherwise be freed",
+      "Afterwards (^prd).next no longer designates the old successor",
+      "Because (^new).info would be erased"
+    ],
+    "correct": "C",
+    "difficulty": 4,
+    "explanation": "Once (^prd).next is overwritten with new, the old successor can no longer be reached from prd to update its previous field."
+  },
+  {
+    "question": "A circular singly linked list holds 10 → 20 → 30 (30 points back to 10). p starts at the head and p ← (^p).next is executed 100 times. Which value does p point to?",
+    "options": [
+      "10",
+      "30",
+      "20",
+      "nil"
+    ],
+    "correct": "C",
+    "difficulty": 5,
+    "explanation": "The cycle has 3 cells, so after 100 steps p is 100 mod 3 = 1 cell after the head: the cell 20. A circular list never reaches nil."
+  },
+  {
+    "question": "What does time complexity count in this course?",
+    "options": [
+      "Seconds measured on a given machine",
+      "Memory cells used",
+      "Lines of code of the algorithm",
+      "Elementary operations, as a function of the input size n"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "We count elementary operations instead of seconds, so the measure is independent of the machine and the language."
+  },
+  {
+    "question": "Which one is an elementary operation (cost 1)?",
+    "options": [
+      "A whole for loop",
+      "An assignment such as x ← 3",
+      "A call to a recursive function",
+      "Sorting an array"
+    ],
+    "correct": "B",
+    "difficulty": 1,
+    "explanation": "Assignments, reads, writes, comparisons and arithmetic operations each cost 1 because their time does not depend on n."
+  },
+  {
+    "question": "Which complexity class is called quadratic?",
+    "options": [
+      "O(n log n)",
+      "O(n²)",
+      "O(2ⁿ)",
+      "O(log n)"
+    ],
+    "correct": "B",
+    "difficulty": 1,
+    "explanation": "Quadratic: doubling the data multiplies the time by about 4 (for example two nested loops)."
+  },
+  {
+    "question": "Binary search (dichotomous search) on a sorted array has which complexity?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correct": "C",
+    "difficulty": 1,
+    "explanation": "Each comparison halves the remaining search space, giving about log₂(n) steps."
+  },
+  {
+    "question": "Which case is generally used when studying the complexity of an algorithm?",
+    "options": [
+      "The best case",
+      "The worst case",
+      "Random data only",
+      "The case n = 1"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "The worst case bounds the execution time, so it is the one generally used."
+  },
+  {
+    "question": "Simplify O(3n² + 8n + 5).",
+    "options": [
+      "O(3n²)",
+      "O(n)",
+      "O(n²)",
+      "O(n² + n)"
+    ],
+    "correct": "C",
+    "difficulty": 2,
+    "explanation": "Drop the constants and keep the dominant term: n² dominates n and 5."
+  },
+  {
+    "question": "An if-then-else has a condition cost of 1, a then-block of 3 and an else-block of 1. What is its complexity?",
+    "options": [
+      "5",
+      "3",
+      "4",
+      "1"
+    ],
+    "correct": "C",
+    "difficulty": 2,
+    "explanation": "Rule: C1 + max(C2, C3) = 1 + max(3, 1) = 4."
+  },
+  {
+    "question": "Two nested loops each run n times and the body costs O(1). What is the overall complexity?",
+    "options": [
+      "O(n²)",
+      "O(n)",
+      "O(log n)",
+      "O(2ⁿ)"
+    ],
+    "correct": "A",
+    "difficulty": 2,
+    "explanation": "The body runs n × n times, so the complexity is O(n²)."
+  },
+  {
+    "question": "How many elementary operations does the control of `for i ← 1 to n do` cost (initialization, tests, increments)?",
+    "options": [
+      "n + 1",
+      "2n + 1",
+      "3n + 1",
+      "3n + 2"
+    ],
+    "correct": "D",
+    "difficulty": 3,
+    "explanation": "1 assignment + (n + 1) tests + n additions + n assignments = 3n + 2."
+  },
+  {
+    "question": "s ← 0 ; i ← 1\nwhile (i <= N) do\n  s ← s + i ; i ← i + 1\nendwhile\nwrite(s)\nHow many elementary operations?",
+    "options": [
+      "4N + 4",
+      "5N + 2",
+      "5N + 4",
+      "5N + 5"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "2 initial assignments + (N + 1) tests + 4N in the body (2 additions, 2 assignments) + 1 write = 5N + 4."
+  },
+  {
+    "question": "Permut2: read(a, b) ; a ← a+b ; b ← a−b ; a ← a−b ; write(a, b)\nHow many elementary operations (1 per read, write, assignment and arithmetic operation)?",
+    "options": [
+      "8",
+      "5",
+      "6",
+      "10"
+    ],
+    "correct": "A",
+    "difficulty": 3,
+    "explanation": "1 read + 3 × (arithmetic operation + assignment) = 6, + 1 write = 8 operations (Permut1 needs only 5)."
+  },
+  {
+    "question": "What is the time complexity of the naive recursive Fibonacci fib(n) = fib(n−1) + fib(n−2)?",
+    "options": [
+      "Linear, O(n)",
+      "Quadratic, O(n²)",
+      "Logarithmic, O(log n)",
+      "Exponential, O(2ⁿ)"
+    ],
+    "correct": "D",
+    "difficulty": 3,
+    "explanation": "Each call makes 2 recursive calls and many values are recomputed: T(n) = T(n−1) + T(n−2) + O(1), i.e. exponential."
+  },
+  {
+    "question": "Which pair (c, n₀) proves that T(n) = n² + 3n is O(n²), i.e. T(n) ≤ c·n² for every n ≥ n₀?",
+    "options": [
+      "c = 1, n₀ = 1",
+      "c = 2, n₀ = 1",
+      "c = 1, n₀ = 3",
+      "c = 2, n₀ = 3"
+    ],
+    "correct": "D",
+    "difficulty": 4,
+    "explanation": "n² + 3n ≤ 2n² ⇔ 3n ≤ n² ⇔ n ≥ 3. With c = 1 the inequality never holds; with n₀ = 1 and c = 2, n = 1 gives 4 > 2."
+  },
+  {
+    "question": "n ← 1000\nwhile (n > 1) do n ← n / 2   (integer division)\nHow many times does the loop body run?",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "500"
+    ],
+    "correct": "A",
+    "difficulty": 4,
+    "explanation": "1000 → 500 → 250 → 125 → 62 → 31 → 15 → 7 → 3 → 1: 9 iterations, about log₂(1000), hence O(log n)."
+  },
+  {
+    "question": "F(0) = 0, F(1) = 1, F(n) = F(n−1) + F(n−2). How many calls (counting the first one) does the naive recursive computation of F(5) make?",
+    "options": [
+      "15",
+      "9",
+      "11",
+      "25"
+    ],
+    "correct": "A",
+    "difficulty": 5,
+    "explanation": "calls(n) = 1 + calls(n−1) + calls(n−2) with calls(0) = calls(1) = 1: 1, 1, 3, 5, 9, 15 for n = 0..5."
+  },
+  {
+    "question": "Which principle does a stack follow?",
+    "options": [
+      "FIFO (First In, First Out)",
+      "Random access",
+      "Sorted insertion",
+      "LIFO (Last In, First Out)"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "The last element pushed is the first one removed; only the top is accessible."
+  },
+  {
+    "question": "Which primitive adds an element at the top of a stack?",
+    "options": [
+      "Push",
+      "Pop",
+      "TopStack",
+      "InitStack"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Push adds above the top element; Pop removes the top; TopStack only consults it."
+  },
+  {
+    "question": "Which primitive returns the top element without removing it?",
+    "options": [
+      "Pop",
+      "Push",
+      "EmptyStack",
+      "TopStack"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "TopStack consults the top without changing its position or content; Pop also removes it."
+  },
+  {
+    "question": "In the contiguous (array) representation, when is the stack empty?",
+    "options": [
+      "Top = 0",
+      "Top = max",
+      "Top = 1",
+      "Top = nil"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "InitStack sets Top ← 0, so the stack is empty when Top = 0 and full when Top = max."
+  },
+  {
+    "question": "In the contiguous (array) representation, when is the stack full?",
+    "options": [
+      "Top = 0",
+      "Top = max + 1",
+      "Top = 1",
+      "Top = max"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "max is the size of the array: when Top reaches it, no further Push is possible."
+  },
+  {
+    "question": "In a dynamic stack (linked list), where do push and pop take place?",
+    "options": [
+      "At the tail of the list",
+      "At the head of the list",
+      "In the middle of the list",
+      "At both ends"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "The stack variable points to the top, which is the head of the list; both operations only touch it."
+  },
+  {
+    "question": "Why do compilers use a stack when functions are called?",
+    "options": [
+      "To sort the function names",
+      "To save return addresses and variables, restored in reverse order",
+      "To store the program's source code",
+      "To count the number of calls"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "Returns happen in the opposite order of the calls, which matches the LIFO structure of a stack."
+  },
+  {
+    "question": "What is the postfix form of the infix expression (25 + 11) * 5 ?",
+    "options": [
+      "25 11 5 * +",
+      "25 11 + 5 *",
+      "25 + 11 * 5",
+      "* + 25 11 5"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "In postfix the operator comes after its two operands: (25 11 +) then 5, then *."
+  },
+  {
+    "question": "Push(p, 10) ; Push(p, 20) ; Pop(p, x) ; Push(p, 30) ; x ← TopStack(p)\nWhat are the final x and the number of elements in p?",
+    "options": [
+      "x = 30, 2 elements",
+      "x = 20, 2 elements",
+      "x = 30, 3 elements",
+      "x = 10, 1 element"
+    ],
+    "correct": "A",
+    "difficulty": 3,
+    "explanation": "Pop removes 20, leaving [10]; Push 30 gives [10, 30]; the top is 30 and the stack holds 2 elements."
+  },
+  {
+    "question": "Evaluate the postfix expression  6 2 3 + * 4 −",
+    "options": [
+      "26",
+      "14",
+      "30",
+      "22"
+    ],
+    "correct": "A",
+    "difficulty": 3,
+    "explanation": "2 3 + = 5; 6 5 * = 30; 30 4 − = 26."
+  },
+  {
+    "question": "What is the postfix form of (a + b) * c − d ?",
+    "options": [
+      "a b c * + d −",
+      "a b + c d − *",
+      "a b + c * d −",
+      "a b c + * d −"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "(a b +) c * gives a b + c *, then d and − are added: a b + c * d −."
+  },
+  {
+    "question": "In the dynamic Pop, what is the role of the variable temp?",
+    "options": [
+      "It stores the new element to push",
+      "It counts the elements of the stack",
+      "It points to the bottom of the stack",
+      "It keeps the old top so its memory can be freed after the top moves"
+    ],
+    "correct": "D",
+    "difficulty": 3,
+    "explanation": "temp ← p saves the old top; then p moves to the next cell and free(temp) releases the removed cell."
+  },
+  {
+    "question": "Research(P, val) with P = 9, 3, 5, 2 (top first) and val = 5. After the first while loop (search phase), what do P and R contain (top first)?",
+    "options": [
+      "P = 5, 2 and R = 9, 3",
+      "P = 5, 2 and R = 3, 9",
+      "P = 3, 5, 2 and R = 9",
+      "P = 2 and R = 5, 3, 9"
+    ],
+    "correct": "B",
+    "difficulty": 4,
+    "explanation": "9 is popped and pushed onto R, then 3: R = 3, 9 (top first). The top of P is now 5, so the loop stops; R is then emptied back into P."
+  },
+  {
+    "question": "Using the course's algorithm (priority of * higher than + and −), what is the postfix form of A + B * C − D ?",
+    "options": [
+      "A B + C * D −",
+      "A B C D − * +",
+      "A B C * + D −",
+      "A B C * D − +"
+    ],
+    "correct": "C",
+    "difficulty": 4,
+    "explanation": "* is applied first, then +; when − arrives it pops * and + (priority ≤), so the result is A B C * + D −."
+  },
+  {
+    "question": "Evaluating the postfix expression 5 1 2 + 4 * + 3 − with a stack, what are the final result and the maximum number of elements on the stack at any time?",
+    "options": [
+      "14 and 4",
+      "17 and 3",
+      "14 and 3",
+      "12 and 2"
+    ],
+    "correct": "C",
+    "difficulty": 5,
+    "explanation": "1 2 + = 3; 3 4 * = 12; 5 12 + = 17; 17 3 − = 14. The stack peaks at 3 elements (5, 1, 2 before the first +)."
+  },
+  {
+    "question": "What does FIFO stand for?",
+    "options": [
+      "First In, Fast Out",
+      "Fixed Input, Fixed Output",
+      "First In, First Out",
+      "Final In, First Out"
+    ],
+    "correct": "C",
+    "difficulty": 1,
+    "explanation": "A queue removes elements in the same order they were inserted."
+  },
+  {
+    "question": "Where are new elements inserted in a queue?",
+    "options": [
+      "At the head (front)",
+      "In the middle",
+      "At the tail (end)",
+      "At either end"
+    ],
+    "correct": "C",
+    "difficulty": 1,
+    "explanation": "Insertions happen at the tail and deletions at the head."
+  },
+  {
+    "question": "Which primitive removes the element at the head of a queue?",
+    "options": [
+      "Dequeue",
+      "Enqueue",
+      "HeadQueue",
+      "InitQueue"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Enqueue adds at the tail, HeadQueue only consults the head, Dequeue removes it and returns its value."
+  },
+  {
+    "question": "Which structure is used to implement a dynamic queue?",
+    "options": [
+      "An array",
+      "A linked list",
+      "A stack",
+      "A record without pointers"
+    ],
+    "correct": "B",
+    "difficulty": 1,
+    "explanation": "A static queue uses an array; a dynamic queue uses a linked list with Head and Tail pointers."
+  },
+  {
+    "question": "Static queue implemented by offset (Head fixed at 1): when is the queue empty?",
+    "options": [
+      "Tail = 1",
+      "Tail = max",
+      "Head = Tail",
+      "Tail = 0"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "Head stays at 1, so an empty queue is detected by Tail = 0; it is full when Tail = max."
+  },
+  {
+    "question": "Static queue implemented by offset: when is it full?",
+    "options": [
+      "Tail = 0",
+      "Tail = max",
+      "Head = Tail",
+      "(Tail + 1) mod max = Head"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "The array has max cells and Head is fixed, so the queue is full when Tail reaches max."
+  },
+  {
+    "question": "In a circular-array queue, when is the queue empty?",
+    "options": [
+      "Head = Tail",
+      "Tail = 0",
+      "Head = 0",
+      "(Tail + 1) mod Max = Head"
+    ],
+    "correct": "A",
+    "difficulty": 2,
+    "explanation": "Empty: Head = Tail. Full: (Tail + 1) mod Max = Head."
+  },
+  {
+    "question": "In a linear static queue (Head moves forward), how many elements does it hold at any time?",
+    "options": [
+      "Tail + Head",
+      "Tail − Head",
+      "Tail − Head + 1",
+      "Head − Tail + 1"
+    ],
+    "correct": "C",
+    "difficulty": 2,
+    "explanation": "Elements occupy positions Head..Tail, so their number is Tail − Head + 1."
+  },
+  {
+    "question": "Static queue: InitQueue sets Head = 1 and Tail = 0. Then Enqueue(10), Enqueue(20), Enqueue(14), Dequeue, Enqueue(7). What are Head, Tail and the number of elements?",
+    "options": [
+      "Head = 1, Tail = 4, 4 elements",
+      "Head = 2, Tail = 4, 3 elements",
+      "Head = 2, Tail = 3, 2 elements",
+      "Head = 1, Tail = 3, 3 elements"
+    ],
+    "correct": "B",
+    "difficulty": 3,
+    "explanation": "Each Enqueue moves Tail up (Tail = 4 after 4 insertions); Dequeue moves Head to 2. Elements: 20, 14, 7 = 4 − 2 + 1 = 3."
+  },
+  {
+    "question": "Circular queue with Max = 8, Head = 3 and Tail = 2. Is it full according to (Tail + 1) mod Max = Head?",
+    "options": [
+      "No: it is empty",
+      "No: one more element fits",
+      "Yes: (2 + 1) mod 8 = 3 = Head",
+      "No: Tail must equal Max"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "The condition holds, so the queue is full: one cell is deliberately left unused."
+  },
+  {
+    "question": "In the dynamic Dequeue, why is f.Head = f.Tail tested?",
+    "options": [
+      "To detect the last element, so Head and Tail both become nil",
+      "To check that the queue is full",
+      "To avoid freeing the node",
+      "To swap Head and Tail"
+    ],
+    "correct": "A",
+    "difficulty": 3,
+    "explanation": "If Head = Tail there is only one element; after removing it the queue is empty, so Head and Tail must both be set to nil."
+  },
+  {
+    "question": "Dynamic queue 1 → 8 → 5 → 11 (Head on 1). Two Dequeue, then Enqueue(3). What does the queue hold, head to tail?",
+    "options": [
+      "8, 5, 11, 3",
+      "1, 8, 3",
+      "3, 5, 11",
+      "5, 11, 3 (Tail points to 3)"
+    ],
+    "correct": "D",
+    "difficulty": 3,
+    "explanation": "Two Dequeue remove 1 and 8; Enqueue(3) links 3 after 11 and Tail moves to it."
+  },
+  {
+    "question": "In the offset implementation (Head always 1), why is Dequeue costly?",
+    "options": [
+      "The whole array must be reallocated",
+      "The queue must be sorted again",
+      "Tail must be reset to 0",
+      "All remaining elements must be shifted one place toward the head"
+    ],
+    "correct": "D",
+    "difficulty": 4,
+    "explanation": "Removing the first cell leaves a gap at position 1, so everything is shifted left: the 'lag problem'. Circular arrays avoid it."
+  },
+  {
+    "question": "A dynamic queue keeps only a Head pointer (no Tail). What would Enqueue then require?",
+    "options": [
+      "Allocating a new Head",
+      "Traversing the whole list to find the last node",
+      "Reversing the list first",
+      "Nothing: it works the same"
+    ],
+    "correct": "B",
+    "difficulty": 4,
+    "explanation": "Tail stores the address of the last element so Enqueue can link the new node directly; without it each insertion costs a full traversal."
+  },
+  {
+    "question": "A circular queue with Max = 6 uses the full condition (Tail + 1) mod Max = Head and the empty condition Head = Tail. How many elements can it hold at most?",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "correct": "A",
+    "difficulty": 5,
+    "explanation": "One cell is always left unused so that 'full' and 'empty' can be told apart: capacity = Max − 1 = 5."
+  },
+  {
+    "question": "What is a recursive function?",
+    "options": [
+      "A function that calls itself, directly or indirectly",
+      "A function that never returns",
+      "A function with no parameters",
+      "A function that uses only loops"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "A parametrized action is recursive if its execution involves one or more calls to itself."
+  },
+  {
+    "question": "What must a recursive function contain to avoid infinite calls?",
+    "options": [
+      "A global variable",
+      "A stopping condition (base case)",
+      "A for loop",
+      "At least two parameters"
+    ],
+    "correct": "B",
+    "difficulty": 1,
+    "explanation": "The stopping condition is tested first; if it holds, the result is computed directly with no further call."
+  },
+  {
+    "question": "Which memory area stores the parameters, local variables and return address of each call?",
+    "options": [
+      "The call (execution) stack",
+      "The heap",
+      "The program's source code",
+      "The hard disk"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Each call pushes its parameters, local objects and return address on the stack (LIFO)."
+  },
+  {
+    "question": "even(n) calls odd(n − 1) and odd(n) calls even(n − 1). What kind of recursion is this?",
+    "options": [
+      "Indirect recursion",
+      "Direct recursion",
+      "Tail recursion",
+      "Nested recursion"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Each function calls the other, so the call comes back to the starting function after passing through another one."
+  },
+  {
+    "question": "When is a recursive function tail-recursive?",
+    "options": [
+      "It has no stopping condition",
+      "It calls itself twice",
+      "It uses a stack explicitly",
+      "Nothing is executed after the recursive call"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "In tail recursion the recursive call is the last action, so it needs no stack and can be replaced by a loop."
+  },
+  {
+    "question": "DisplayRecT(n, i): if (i <= n) then write(i) ; DisplayRecT(n, i+1) endif\nWhat does DisplayRecT(3, 1) print?",
+    "options": [
+      "3 2 1",
+      "1 2 3 3 2 1",
+      "3",
+      "1 2 3"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "The write happens before the recursive call, so values come out in the order of the calls."
+  },
+  {
+    "question": "DisplayRecNT(n, i): if (i <= n) then DisplayRecNT(n, i+1) ; write(i) endif\nWhat does DisplayRecNT(3, 1) print?",
+    "options": [
+      "1 2 3",
+      "1 2 3 3 2 1",
+      "3 1 2",
+      "3 2 1"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "The write happens after the recursive call, so it runs while the calls return: in reverse order."
+  },
+  {
+    "question": "What can happen when recursion goes too deep without reaching the base case?",
+    "options": [
+      "A syntax error",
+      "A stack overflow",
+      "The variables are erased",
+      "A compile-time warning only"
+    ],
+    "correct": "B",
+    "difficulty": 2,
+    "explanation": "The call stack has a fixed size; too many nested calls exhaust it."
+  },
+  {
+    "question": "How many calls to Factorial (counting the first one) are made when computing Factorial(4)?",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "correct": "B",
+    "difficulty": 3,
+    "explanation": "Factorial(4), (3), (2), (1) and (0): the base case n = 0 is reached after n + 1 calls."
+  },
+  {
+    "question": "even(n): if n = 0 return true else return odd(n−1)\nodd(n): if n = 0 return false else return even(n−1)\nWhat does even(5) return?",
+    "options": [
+      "true",
+      "false",
+      "Infinite recursion",
+      "5"
+    ],
+    "correct": "B",
+    "difficulty": 3,
+    "explanation": "even(5) → odd(4) → even(3) → odd(2) → even(1) → odd(0) = false: 5 is odd."
+  },
+  {
+    "question": "multiple38(n): if n = 38 return True ; if n < 38 return False ; return multiple38(n − 38)\nWhat does multiple38(100) return?",
+    "options": [
+      "True",
+      "Infinite recursion",
+      "False",
+      "24"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "100 → 62 → 24; 24 < 38, so the base case returns False (100 is not a multiple of 38)."
+  },
+  {
+    "question": "Why is the recursive Fibonacci much costlier than the iterative one?",
+    "options": [
+      "It uses more variables",
+      "It needs a sorted array",
+      "It recomputes the same values many times (exponential number of calls)",
+      "Loops are always faster than any call"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "The recursive version makes an exponential number of calls; the iterative one needs only n iterations."
+  },
+  {
+    "question": "DisplayRec(n, i): if (i <= n) then write(i) ; DisplayRec(n, i+1) ; write(\";\") ; DisplayRec(n, i+1) ; write(i) endif\nWhat does DisplayRec(2, 1) print?",
+    "options": [
+      "1221",
+      "12;21",
+      "12;2;2;21",
+      "12;2;21"
+    ],
+    "correct": "C",
+    "difficulty": 4,
+    "explanation": "Level 1 prints 1, then [2;2], then ';', then [2;2] again, then 1: 12;2;2;21."
+  },
+  {
+    "question": "Which statement about eliminating recursion is correct?",
+    "options": [
+      "Both can only be replaced by a for loop with no stack",
+      "Non-terminal recursion becomes a while loop; tail recursion needs a stack",
+      "Tail recursion becomes a while loop; non-terminal recursion needs a stack",
+      "Recursion can never be eliminated"
+    ],
+    "correct": "C",
+    "difficulty": 4,
+    "explanation": "For tail recursion the call is replaced by a loop that updates the parameters; otherwise the context (x) of each call must be saved on a stack and restored afterwards."
+  },
+  {
+    "question": "P(n): if (n > 0) then P(n − 1) ; write(n) ; P(n − 2) endif\nWhat does P(3) print?",
+    "options": [
+      "3 2 1 1",
+      "1 2 3 2",
+      "1 2 1 3",
+      "1 2 3 1"
+    ],
+    "correct": "D",
+    "difficulty": 5,
+    "explanation": "P(3) = P(2), 3, P(1). P(2) = P(1), 2, P(0) = 1 2. P(1) = 1. Together: 1 2 3 1."
+  },
+  {
+    "question": "What is the node that has no predecessor called?",
+    "options": [
+      "A leaf",
+      "An internal node",
+      "A subtree",
+      "The root"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "The root is the only node without a parent; leaves are nodes without children."
+  },
+  {
+    "question": "What is a node without any successor called?",
+    "options": [
+      "A leaf",
+      "The root",
+      "A parent",
+      "An ancestor"
+    ],
+    "correct": "A",
+    "difficulty": 1,
+    "explanation": "Leaves (terminal nodes) have no children; other nodes that are neither root nor leaf are internal nodes."
+  },
+  {
+    "question": "In a binary tree, how many successors can each node have?",
+    "options": [
+      "Exactly 2",
+      "At least 1",
+      "Any number",
+      "0, 1 or 2"
+    ],
+    "correct": "D",
+    "difficulty": 1,
+    "explanation": "A binary tree has maximum degree 2: a left and/or a right successor."
+  },
+  {
+    "question": "In which order does a prefix (preorder) traversal visit a node R with left subtree A1 and right subtree A2?",
+    "options": [
+      "A1, R, A2",
+      "R, A1, A2",
+      "A1, A2, R",
+      "A2, R, A1"
+    ],
+    "correct": "B",
+    "difficulty": 1,
+    "explanation": "Prefix: root, left, right. Infix: A1, R, A2. Postfix: A1, A2, R."
+  },
+  {
+    "question": "What is the level of the root of a tree?",
+    "options": [
+      "1",
+      "−1",
+      "The height of the tree",
+      "0"
+    ],
+    "correct": "D",
+    "difficulty": 2,
+    "explanation": "The root has level 0 and each node's level is its parent's level + 1."
+  },
+  {
+    "question": "How many edges (arcs) does a tree with 13 nodes have?",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "11"
+    ],
+    "correct": "A",
+    "difficulty": 2,
+    "explanation": "The number of edges in a tree is the number of nodes minus 1."
+  },
+  {
+    "question": "Which traversal of a binary search tree visits the values in increasing order?",
+    "options": [
+      "Infix (inorder)",
+      "Prefix (preorder)",
+      "Postfix (postorder)",
+      "Breadth-first"
+    ],
+    "correct": "A",
+    "difficulty": 2,
+    "explanation": "Left subtree < node < right subtree, so visiting left, node, right gives sorted values."
+  },
+  {
+    "question": "Which property defines a binary search tree?",
+    "options": [
+      "Every node has exactly two children",
+      "All leaves are at the same level",
+      "Left values < node < right values, for every node",
+      "Values increase from the root downward"
+    ],
+    "correct": "C",
+    "difficulty": 2,
+    "explanation": "This ordering lets the search work dichotomously: go left if the value is smaller, right otherwise."
+  },
+  {
+    "question": "Tree written in parentheses: (A (B(F), C(G), D(H, I(K), J), E)). What is the degree of the tree?",
+    "options": [
+      "3",
+      "5",
+      "4",
+      "2"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "Node A has 4 children (B, C, D, E), the maximum; D has 3. The degree of a tree is the maximum degree of its nodes."
+  },
+  {
+    "question": "With the course's main convention (height counted in nodes), what is the height of a tree reduced to its root?",
+    "options": [
+      "0",
+      "2",
+      "−1",
+      "1"
+    ],
+    "correct": "D",
+    "difficulty": 3,
+    "explanation": "The height is the number of nodes on the longest path from the root to a leaf; counting edges instead (another convention) would give 0."
+  },
+  {
+    "question": "Which operator is at the root of the expression tree of (3 * (9 − 2)) + (5 − (2 * 8)) ?",
+    "options": [
+      "+",
+      "*",
+      "−",
+      "3"
+    ],
+    "correct": "A",
+    "difficulty": 3,
+    "explanation": "The last operation performed is the addition of the two big parenthesized terms, so + is the root."
+  },
+  {
+    "question": "How many nodes does a complete binary tree of height 4 (height counted in nodes) have?",
+    "options": [
+      "16",
+      "8",
+      "15",
+      "31"
+    ],
+    "correct": "C",
+    "difficulty": 3,
+    "explanation": "A complete tree of height h has 2^h − 1 nodes: 2⁴ − 1 = 15."
+  },
+  {
+    "question": "A binary tree has prefix traversal 54 22 12 32 61 55 78 and infix traversal 12 22 32 54 55 61 78. What is its postfix traversal?",
+    "options": [
+      "12 22 32 55 61 78 54",
+      "54 22 61 12 32 55 78",
+      "12 32 22 55 78 61 54",
+      "12 32 22 78 55 61 54"
+    ],
+    "correct": "C",
+    "difficulty": 4,
+    "explanation": "Root 54 (first in prefix). Infix splits left {12, 22, 32} and right {55, 61, 78}: 22(12, 32) and 61(55, 78). Postfix = left, right, root."
+  },
+  {
+    "question": "The values 40, 20, 60, 10, 30, 50, 70 are inserted in this order into an empty binary search tree. What is its prefix traversal?",
+    "options": [
+      "10 20 30 40 50 60 70",
+      "40 20 10 30 60 50 70",
+      "40 20 60 10 30 50 70",
+      "10 30 20 50 70 60 40"
+    ],
+    "correct": "B",
+    "difficulty": 4,
+    "explanation": "40 is the root; 20 and 60 are its children; 10, 30 under 20; 50, 70 under 60. Prefix = root, left subtree, right subtree."
+  },
+  {
+    "question": "A complete binary tree has 31 nodes. With the course's conventions (height counted in nodes), what are its height and number of leaves?",
+    "options": [
+      "Height 4 and 16 leaves",
+      "Height 5 and 16 leaves",
+      "Height 5 and 15 leaves",
+      "Height 6 and 32 leaves"
+    ],
+    "correct": "B",
+    "difficulty": 5,
+    "explanation": "2^h − 1 = 31 gives h = 5; the number of leaves is 2^(h−1) = 16."
+  }
+]
